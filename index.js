@@ -3,6 +3,7 @@ const sequelize=require('./config/db');
 
 const User=require('./models/usermodel');
 require('dotenv').config();
+// const protectroute=require('./routes/authroutes')
 
 
 const app=express();
@@ -20,6 +21,8 @@ syncDatabase();
 
 const authrouter=require('./routes/authrouters')
 app.use('/api/auth',authrouter);
+
+// app.use('/api/auth',protectroute)
 
 const port=process.env.PORT;
 app.listen(port,()=>{
