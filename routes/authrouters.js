@@ -4,7 +4,7 @@ const secret=process.env.JWT_SECRET;
 require('dotenv').config();
 const bcrypt=require('bcryptjs')
 const User=require('../models/usermodel');
-const authenticationJwt = require('../middleware/authmiddleware');
+// const authenticationJwt = require('../middleware/authmiddleware');
 
 const router=express.Router();
 
@@ -56,8 +56,8 @@ router.post('/login',async(req,res)=>{
     }
 })
 
-router.get('/dashboard',authenticationJwt,(req,res)=>{
-    res.json({message:"profile accessed", user:req.user})
-})
+// router.get('/dashboard',authenticationJwt,(req,res)=>{
+//     res.json({message:"profile accessed", user:req.user})
+// })
 
 module.exports=router;
